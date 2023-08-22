@@ -1,4 +1,4 @@
-const products = [
+const product = [
   {
     id: 1,
     name: 'Trà sữa truyền thống',
@@ -16,22 +16,62 @@ const products = [
   },
 ];
 
-const productListElement = document.querySelector('.product-list');
+const sugars = [
+  {
+    id: 1,
+    amount: 0,
+    label: '0%',
+  },
+  {
+    id: 2,
+    amount: 50,
+    label: '50%',
+  },
+  {
+    id: 3,
+    amount: 100,
+    label: '100%',
+  },
+];
 
-const renderList = () => {
-  const productElement = products.map((product) => {
-    return ` <li>
-    <p>${product.name}</p>
-    <span>${product.price} VND</span>
-    <span>quantity</span> <span>-</span> <span>1</span> <span>+</span>
-    <p>Ice</p>
-    <span>0%</span> <span>50%</span> <span>100%</span>
-    <p>Sugar</p>
-    <span>0%</span> <span>50%</span> <span>100%</span>
-    <button>add to cart</button>
-  </li>`;
-  });
-  productListElement.innerHTML = productElement.join('');
+const ices = [
+  {
+    id: 1,
+    amount: 0,
+    label: '0%',
+  },
+  {
+    id: 2,
+    amount: 50,
+    label: '50%',
+  },
+  {
+    id: 3,
+    amount: 100,
+    label: '100%',
+  },
+];
+
+const addToCard = (productId, iceId, sugarId, quantity) => {
+  const cartString = localStorage.getItem('cart');
+  var carts = cartString ? JSON.parse(cartString) : [];
+
+  var cartItem = carts.find(
+    (x) =>
+      x.productId === productId && x.iceId === iceId && x.sugarId === sugarId
+  );
+  if (cartItem) {
+    cartItem += quantity;
+  } else {
+    carts.push({
+      productId,
+      iceId,
+      sugarId,
+      quantity,
+    });
+  }
+
+  localStorage.setItem('cart', JSON.stringify(carts));
 };
 
-renderList();
+addToCard();
