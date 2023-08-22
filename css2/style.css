@@ -1,0 +1,85 @@
+.container {
+ padding: 30px 50px;
+}
+
+.tooltipRight {
+  position: relative;
+  display: inline-block;
+
+}
+
+.tooltipRight .tooltip-text {
+  visibility: hidden;
+  background-color: blue;
+  color: white;
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltipRight:hover .tooltip-text {
+  visibility: visible;
+}
+
+
+.tooltipLeft {
+  position: relative;
+  display: inline-block;
+
+}
+
+.tooltipLeft .tooltip-text {
+  visibility: hidden;
+  background-color: blue;
+  color: white;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  right: 105%;
+}
+
+.tooltipLeft:hover .tooltip-text {
+  visibility: visible;
+}
+
+.tooltipTop {
+  position: relative;
+  display: inline-block;
+
+}
+
+.tooltipTop .tooltip-text {
+  visibility: hidden;
+  background-color: blue;
+  color: white;
+  position: absolute;
+  z-index: 1;
+  bottom:  100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltipTop:hover .tooltip-text {
+  visibility: visible;
+}
+
+
+.tooltipBottom {
+  position: relative;
+  display: inline-block;
+
+}
+
+.tooltipBottom .tooltip-text {
+  visibility: hidden;
+  background-color: blue;
+  color: white;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltipBottom:hover .tooltip-text {
+  visibility: visible;
+}
