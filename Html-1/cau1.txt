@@ -1,0 +1,1 @@
+Chúng ta có thể chèn file css và file js trong phần head trên thẻ body của html để dùng link src liên kết chúng, riêng file js nên để ở dưới cùng html trong phần body để tăng tốc độ hiển thị của web
